@@ -1,4 +1,4 @@
-import CardViewer from "./cardViewer";
+import CardViewer from "./CardViewer";
 
 export {
     CardViewer,
