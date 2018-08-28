@@ -4,10 +4,10 @@ import React from "react";
 const source = axios.CancelToken.source();
 
 const config: AxiosRequestConfig = {
-    baseURL: " https://gateway.marvel.com/v1/public",
+    baseURL: " https://gateway.marvel.com:443/v1/public",
     cancelToken: source.token,
     params: {
-        apikey: process.env.MARVEL_API_KEY,
+        apikey: "c8bdfa572bb35fa366a202b82da86c7d",
     },
 };
 
@@ -25,7 +25,7 @@ const WithData = (WrappedComponent: React.ComponentType) => (
 
         public async componentDidMount() {
             await client.get("/characters")
-                .then( (result) => this.setState({ data: result.data }))
+                .then( (result) => this.setState({ data: result.data.data }))
                 .catch( (error) => this.setState({ error }));
         }
 

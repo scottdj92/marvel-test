@@ -1,5 +1,5 @@
-// tslint:disable-next-line:no-var-requires
-require("dotenv").config();
+import "bulma/bulma";
+import "babel-polyfill";
 import React from "react";
 import { render } from "react-dom";
 import App from "./src/app";

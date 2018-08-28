@@ -1,3 +1,10 @@
 import React from "react";
+import { WithAPIContext, UsingAPIContext } from "./providers";
+import { Container } from "bloomer";
+import { CardViewer } from "./components";
 
-export default () => <h1>Hello world</h1>;
+export default WithAPIContext(() => (
+    <Container isFluid>
+        <CardViewer/>
+    </Container>
+));
