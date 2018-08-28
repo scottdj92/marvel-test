@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { Character } from "../../models";
 import {
     Title,
-    Content,
     Card,
     CardImage,
     CardContent,
@@ -13,10 +12,40 @@ import {
     CardFooterItem,
 } from "bloomer";
 import Description from "./Description";
+import { transitions } from "polished";
 
 const CardWrapper = styled(Card)`
     border: 1px solid gray;
     padding: 5px;
+`;
+
+const SellButton = styled(CardFooterItem)`
+    ${transitions(["color", "background-color", "0.1s ease-in"])}
+    &:hover {
+        background-color: gray;
+        color: whitesmoke;
+        cursor: pointer;
+    };
+`;
+
+const ShareButton = styled(CardFooterItem)`
+    ${transitions(["color", "background-color", "0.1s ease-in"])}
+    color: blueviolet;
+    &:hover {
+        background-color: blueviolet;
+        color: whitesmoke;
+        cursor: pointer;
+    };
+`;
+
+const DeleteButton = styled(CardFooterItem)`
+    ${transitions(["color", "background-color", "0.1s ease-in"])}
+    color: red;
+    &:hover {
+        background-color: red;
+        color: whitesmoke;
+        cursor: pointer;
+    };
 `;
 
 interface Props {
@@ -34,9 +63,9 @@ const CharacterCard: React.SFC<Props> = ({ data: { name, description, thumbnail 
                 <Description text={description}/>
             </CardContent>
             <CardFooter>
-                <CardFooterItem>Sell</CardFooterItem>
-                <CardFooterItem>Share</CardFooterItem>
-                <CardFooterItem>Delete</CardFooterItem>
+                <SellButton>Sell</SellButton>
+                <ShareButton>Share</ShareButton>
+                <DeleteButton>Delete</DeleteButton>
             </CardFooter>
         </CardWrapper>
     </Column>

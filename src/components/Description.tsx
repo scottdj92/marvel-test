@@ -1,6 +1,5 @@
 import React from "react";
 import truncate from "truncate";
-import styled from "styled-components";
 
 interface Props {
     text: string;

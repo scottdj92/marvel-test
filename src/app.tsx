@@ -1,5 +1,5 @@
 import React from "react";
-import { WithAPIContext, UsingAPIContext } from "./providers";
+import { WithAPIContext } from "./providers";
 import { Container } from "bloomer";
 import { CardViewer } from "./components";
 
